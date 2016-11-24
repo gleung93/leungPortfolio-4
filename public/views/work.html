@@ -1,0 +1,10 @@
+<div class="wrapper" ng-controller="projectIndex">
+  <a ng-repeat="x in projects" class="projectGroup" href="{{x.link}}">
+    <div class="projectImage" style="background-image:url('{{x.imgSrc}}')"></div>
+    <div class="card">
+      <h2>{{x.title}}</h2>
+      <h5>{{x.description}}</h5>
+      <img class="arrowRight" src="assets/arrow_right.svg">
+    </div>
+  </a>
+</div>

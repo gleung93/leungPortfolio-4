@@ -1,0 +1,26 @@
+$primary-font-stack: 'Merriweather', serif;
+$secondary-font-stack: 'Source Sans Pro', serif;
+
+html {
+  font-family: $primary-font-stack;
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 44px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 24px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 19px;
+  margin: 0;
+}

@@ -1,0 +1,40 @@
+#threeHero {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  border-bottom: solid 1px #b4b4b4;
+}
+
+/*
+.projectTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+*/
+
+.projectTitle {
+  border-bottom: 5px solid black;
+}
+
+.projectTitle h1 {
+  font-weight: 400;
+}
+
+.projectTitle h4 {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.projectIntro h2 {
+  @include span(12);
+  margin-bottom: 200px;
+  @include susy-breakpoint(768px, 12) {
+  // nested code uses an 8-column grid,
+  // starting at a 30em min-width breakpoint...
+    @include span(5);
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="leungPortfolio">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Grant Leung 2016 Portfolio</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- SCRIPTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="app.js"></script>
+
+  <!-- Fix this-->
+  <script src="threejs/three.min.js"></script>
+  <script src="threejs/Tween.js"></script>
+  <script src="threejs/OBJLoader.js"></script>
+
+  <!--for dev only -->
+  <script src="//localhost:35729/livereload.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body ng-controller="mainController">
+
+  <div ng-switch="isLoading">
+
+  <!-- BEGIN: Loading View. -->
+  <p ng-switch-when="true">Your images are being loaded... {{ percentLoaded }}%</p>
+  <!-- END: Loading View. -->
+
+  <!-- BEGIN: Results View. -->
+  <div ng-switch-when="false">
+    <div id="main">
+      <!--global conent-->
+      <a class="home" href="#/">Grant Leung</a>
+      <a href="#work">
+        <div class="menu">
+          <span class="bar top-bar"></span>
+          <span class="bar middle-bar"></span>
+          <span class="bar bottom-bar"></span>
+        </div>
+      </a>
+
+      <div ng-class='{ show: visible, left: alignment === \"left\", right: alignment === \"right\" }' ng-transclude></div>
+
+      <!-- this is where content will be injected -->
+      <div class="page {{ pageClass }}" ng-view></div>
+    </div>
+  </div>
+  <!-- END: Results View. -->
+
+</div>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

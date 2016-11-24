@@ -1,0 +1,49 @@
+//Timing
+$swift-out: cubic-bezier(0.36,0,0.2,1);
+
+//Transitions
+.view-home {
+  opacity: 0;
+  @include animation(fadeIn 0.5s linear forwards);
+}
+
+.view-home.ng-leave {
+  @include animation(fadeOut 0.25s linear, fadeOutGrey 0.25 linear forwards);
+}
+
+@include keyframes(fadeOutGrey) {
+  to {
+    background-color: $greylightest;
+  }
+}
+
+
+//Project index page
+.view-work.ng-enter {
+  opacity: 1;
+  //@include animation(fadeIn 0.75s linear 0.75s forwards);
+}
+
+
+
+//Keyframes
+@include keyframes(fadeOut) {
+  to {
+    opacity:0;
+  }
+}
+
+@include keyframes(fadeIn) {
+  to {
+    opacity:1;
+  }
+}
+
+@include keyframes(scaleTwistIn) {
+  from {
+    @include transform(translate3d(0,75px,0));
+  }
+  to {
+    @include transform(translate3d(0,0px,0px));
+  }
+}
